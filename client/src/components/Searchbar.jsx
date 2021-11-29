@@ -46,10 +46,14 @@ function Navbar() {
   // --------------------AUTOCOMPLETE---------------------------------
 
   const [prod, setProd] = useState([])
-  useEffect(async() => {
-    const response = await axios.get("/product")
-    console.log("response", response)
-    setProd(response.data)
+  useEffect(() => {
+    async function search() {
+      const response = await axios.get("/product")
+      console.log("response", response)
+      setProd(response.data)
+    }
+
+    search();
   }, []);
 
   const handleOnSelect = ({name}) => {
