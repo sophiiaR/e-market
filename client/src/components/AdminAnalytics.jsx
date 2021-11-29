@@ -1,19 +1,21 @@
 import React from 'react';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { Bar } from 'react-chartjs-2';
 import { Doughnut } from 'react-chartjs-2';
 
 
 const AdminAnalytics = () => {
     const [orderVendor, setorderVendor] = useState()
-    useEffect( async () => {
-    const response = await axios({
-    method: "GET",
-    withCredentials: true,
-    url: '/analytics/forVendor/all'})
-    
-    setorderVendor(response.data)
+    useEffect( () => {
+        async function getAnalitics() {
+            const response = await axios({
+                method: "GET",
+                withCredentials: true,
+                url: '/analytics/forVendor/all'})
+            
+            setorderVendor(response.data)
+        }
+        getAnalitics();
     
     },[]) 
     console.log(orderVendor, "orderANALITICS")
