@@ -1,20 +1,23 @@
 import React from 'react';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { Bar } from 'react-chartjs-2';
 import { Doughnut } from 'react-chartjs-2';
 
 
 const BarChart = () => {
     const [order, setOrder] = useState()
-    useEffect( async () => {
-    const response = await axios({
-    method: "GET",
-    withCredentials: true,
-    url: '/analytics/byUser/all'})
-    
-    setOrder(response.data)
-    
+    useEffect( () => {
+        async function getAnaliticsByUser() {
+            const response = await axios({
+                method: "GET",
+                withCredentials: true,
+                url: '/analytics/byUser/all'
+            })
+            
+            setOrder(response.data)
+        }
+        getAnaliticsByUser();
+        
     },[]) 
     console.log(order, "orderANALITICS")
 
