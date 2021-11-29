@@ -341,35 +341,9 @@ function ProductDetail(props) {
                                     })}</ul>
                                 </h3>
                                 <h3 className={classes.paper}>{p.description}</h3>
+                            </div>                         
                             </div>
-                                    
-                            {/* <div style={{display:"flex",margin:"30px",justifyContent:"center" }}>
-                        <Button
-                className={classes.buttonBack}
-                 variant="contained" color="primary">
-                   <Link to = '/products' style={{textDecoration:"none", color:"white"}}>lista</Link>
-                    </Button>
-                    <br/>
-                    <br/>
-                    <Button
-                className={classes.buttonBack}
-                 variant="contained" color="primary">
-                   <Link to = '/' style={{textDecoration:"none", color:"white"}}>home</Link>
-                    </Button>
-                    </div> */}
-                                {/* {product._id && (
-                                    <Reviews
-                                        id={product._id}
-                                        setUpdateReview={setUpdateReview}
-                                        updateReview={updateReview}
-                                        allReviews={product.reviews}
-                                        userOrder={userOrder}
-                                    />
-                                )} */}
-                            
-                            </div>
-                                        
-
+                                  
                         </div>
                     )
                 })
