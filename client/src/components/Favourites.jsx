@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import NavBar from './Navbar';
 import { makeStyles } from '@material-ui/core/styles';
 import { getFav, deleteFav } from '../actions/index';
 import Paper from '@mui/material/Paper';
@@ -70,8 +69,12 @@ const Favourites = () => {
     const wishlist = useSelector((state) => state.wishlist);
     const dispatch = useDispatch();
 
-    useEffect(async () => {
-     await dispatch(getFav());
+    useEffect(() => {
+      async function getFavourites() {
+        await dispatch(getFav());
+      }
+
+      getFavourites();
       
     }, [dispatch])
 
