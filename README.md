@@ -39,7 +39,7 @@ Colaborative Project - SPA
 
 ### Tech Stack
 
-**Front-end**: React, Redux.
+**Front-end**: React, Redux, Material UI.
 
 **Back-end**: Node, Express.
 
